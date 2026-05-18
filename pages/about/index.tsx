@@ -1,19 +1,70 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NextPage } from 'next';
 import useDeviceDetect from '../../libs/hooks/useDeviceDetect';
 import withLayoutBasic from '../../libs/components/layout/LayoutBasic';
 import { Stack, Box } from '@mui/material';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import AgentCard from '../../libs/components/common/AgentCard';
+import { LIKE_TARGET_MEMBER } from '../../apollo/user/mutation';
+import { useMutation, useQuery } from '@apollo/client';
+import { GET_AGENTS } from '../../apollo/user/query';
+import { AgentsInquiry } from '../../libs/types/member/member.input';
+import { Messages } from '../../libs/config';
+import { sweetMixinErrorAlert, sweetTopSmallSuccessAlert } from '../../libs/sweetAlert';
+import { T } from '../../libs/types/common';
+import { Member } from '../../libs/types/member/member';
+import TopAgentCard from '../../libs/components/homepage/TopAgentCard';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper';
 
 export const getStaticProps = async ({ locale }: any) => ({
 	props: {
 		...(await serverSideTranslations(locale, ['common'])),
 	},
 });
+interface AboutCardProps {
+	initialInput: AgentsInquiry;
+}
 
-const About: NextPage = () => {
+const About = (props: AboutCardProps) => {
+	const { initialInput } = props;
 	const device = useDeviceDetect();
+	const [topAgents, setTopAgents] = useState<Member[]>([]);
+
+
+	const [likeTargetMember] = useMutation(LIKE_TARGET_MEMBER);
+	
+		const {
+			loading: getAgentsLoading,
+			data: getAgentsData,
+			error: getAgentsError,
+			refetch: getAgentsRefetch,
+		} = useQuery(GET_AGENTS, {
+			fetchPolicy: 'cache-and-network',
+			variables: { input: initialInput },
+			notifyOnNetworkStatusChange: true,
+			onCompleted: (data: T) => {
+				setTopAgents(data?.getAgents?.list);
+			},
+		});
+	
+		const likeMemberHandler = async (user: any, id: string) => {
+			try {
+				if (!id) return;
+				if (!user._id) throw new Error(Messages.error2);
+	
+				await likeTargetMember({
+					variables: {
+						input: id,
+					},
+				});
+				await getAgentsRefetch({ input: initialInput });
+				await sweetTopSmallSuccessAlert('success', 800);
+			} catch (err: any) {
+				console.log('ERROR, likePropertyHandler:', err.message);
+				sweetMixinErrorAlert(err.message).then();
+			}
+		};
 
 	if (device === 'mobile') {
 		return <div>ABOUT PAGE MOBILE</div>;
@@ -105,17 +156,6 @@ const About: NextPage = () => {
 								<strong>20M</strong>
 								<p>Happy Customer</p>
 							</Box>
-						</Stack>
-					</Stack>
-				</Stack>
-				<Stack className={'agents'}>
-					<Stack className={'container'}>
-						<span className={'title'}>Our Exclusive Agents</span>
-						<p className={'desc'}>Aliquam lacinia diam quis lacus euismod</p>
-						<Stack className={'wrap'}>
-							{[1, 2, 3, 4, 5].map(() => {
-							return <AgentCard agent={undefined} likeMemberHandler={undefined} />
-							})}
 						</Stack>
 					</Stack>
 				</Stack>
