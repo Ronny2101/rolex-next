@@ -9,7 +9,7 @@ services:
             - PORT=3000
         volumes:
         - ./:/usr/src/rolex-next
-        working_dir: /usr/src/rolex-mext
+        working_dir: /usr/src/rolex-next
 
         networks:
         - client-network
