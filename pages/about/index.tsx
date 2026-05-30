@@ -15,7 +15,7 @@ import { T } from '../../libs/types/common';
 import { Member } from '../../libs/types/member/member';
 import TopAgentCard from '../../libs/components/homepage/TopAgentCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper';
+import { Autoplay, Pagination } from 'swiper/modules';
 
 export const getStaticProps = async ({ locale }: any) => ({
 	props: {
@@ -74,11 +74,10 @@ const About = (props: AboutCardProps) => {
 				<Stack className={'intro'}>
 					<Stack className={'container'}>
 						<Stack className={'left'}>
-							<strong>We're on a Mission to Change View of Real Estate Field.</strong>
+							<strong>Rolex - A Story Of Prestige, Heritage And Perfection</strong>
 							<Box className={'left-img'}>
-							   <img src="/img/banner/header1.svg" alt="" />
-							   <img src="/img/banner/header1.svg" alt="" />
-							   <img src="/img/banner/header1.svg" alt="" />
+							   <img src="/img/banner/bd.PNG" alt="" />
+							   <img src="/img/banner/es.png" alt="" />
 						    </Box>
 						</Stack>
 						<Stack className={'right'}>
@@ -141,7 +140,7 @@ const About = (props: AboutCardProps) => {
 				<Stack className={'statistics'}>
 					<Stack className={'container'}>
 						<Stack className={'banner'}>
-							<img src="/img/banner/header1.svg" alt="" />
+							<img src="/img/banner/ab.PNG" alt="" />
 						</Stack>
 						<Stack className={'info'}>
 							<Box component={'div'}>
@@ -160,7 +159,7 @@ const About = (props: AboutCardProps) => {
 					</Stack>
 				</Stack>
 				<Stack className={'options'}>
-					<img src="/img/banner/aboutBanner.svg" alt="" className={'about-banner'} />
+					<img src="/img/banner/fab.JPEG" alt="" className={'about-banner'} />
 					<Stack className={'container'}>
 						<strong>Let’s find the right selling option for you</strong>
 						<Stack>

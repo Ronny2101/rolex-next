@@ -318,7 +318,7 @@
                     /* Centered footer with enough height for the total-result text */
                     .pagination-config {
                         border-top: 1px solid #efeae2;
-                        background: $ivory;
+                        //background: $ivory;
                         padding: 22px 18px 28px;
                         /* extra bottom padding so text never clips */
                         display: flex;
@@ -337,8 +337,7 @@
 
                         .MuiPagination-root {
                             .MuiPaginationItem-root {
-                                border-radius: 10px;
-                                border: 1px solid #eadfce;
+                                border-radius: 50px;
                                 background: #fff;
                                 color: #6c5a4c;
                                 font-weight: 600;
@@ -353,8 +352,8 @@
 
                             .MuiPaginationItem-root.Mui-selected {
                                 border-color: $gold-1;
-                                background: linear-gradient(180deg, #fff4da, #ffecc2);
-                                color: $ink;
+                                background-color: $primary-color;
+                                color: white;
                                 box-shadow: 0 4px 10px rgba(198, 161, 91, 0.22);
                             }
                         }

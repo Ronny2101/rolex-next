@@ -81,7 +81,7 @@ const CartDrawer = ({ open, onClose }: CartDrawerProps) => {
               <Box sx={{ flex: 1, minWidth: 0 }}>
               <Typography sx={{ fontWeight: 600, lineHeight: 1.2 }}>{item.propertyTitle}</Typography>
                 <Typography sx={{ fontSize: 14, color: '#7a6a58', mt: 0.5 }}>
-                ₩{item.propertyPrice.toLocaleString()}
+                ${item.propertyPrice.toLocaleString()}
                 </Typography>
 
                 <Stack direction="row" alignItems="center" spacing={1.2} sx={{ mt: 1.2 }}>
@@ -133,7 +133,7 @@ const CartDrawer = ({ open, onClose }: CartDrawerProps) => {
         {/* Footer */}
         <Box sx={{ mt: 3 }}>
           <Typography sx={{ fontWeight: 600, fontSize: 18 }}>
-            Total: <strong>₩{subtotal.toLocaleString()}</strong>
+            Total: <strong>${subtotal.toLocaleString()}</strong>
           </Typography>
 
           <Stack direction="row" spacing={2} sx={{ mt: 2.5 }}>

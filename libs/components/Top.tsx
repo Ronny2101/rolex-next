@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import { useQuery, useReactiveVar } from '@apollo/client';
-import { basketItemsVar, userVar } from '../../apollo/store';
+import { basketItemsVar, rehydrateBasketForCurrentUser, userVar } from '../../apollo/store';
 import { getJwtToken, logOut, updateUserInfo } from '../auth';
 import { REACT_APP_API_URL } from '../config';
 
@@ -84,6 +84,7 @@ const Top = () => {
 				break;
 		}
 	}, [router]);
+
 
 	useEffect(() => {
 		const jwt = getJwtToken();
@@ -503,7 +504,7 @@ const Top = () => {
 										style={{ cursor: 'pointer' }}
 										onClick={() => setNotifOpen(true)}
 									/>}
-									<RippleBadge style={{ margin: '-18px 0 0 1px' }} badgeContent={unreadCount} />
+									<RippleBadge style={{ margin: '-18px 0 0 1px' }} badgeContent={unreadCount} color="secondary" />
 
 									<Notifications open={notifOpen} onClose={() => setNotifOpen(false)} />
 								<Button

@@ -1206,7 +1206,6 @@
 							transition: all 0.3s ease;
 							&:hover {
 								box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-								border-color: $primary-color;
 								transform: translateY(-5px);
 								.agent-header img {
 									transform: scale(1.05);
@@ -1328,7 +1327,7 @@
 									padding: 8px 20px;
 									border-radius: $border-radius-medium;
 									&:hover {
-										background: rgba($primary-color, 0.1);
+										background: #6387fd49;
 									}
 								}
 							}

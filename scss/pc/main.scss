@@ -232,34 +232,6 @@ body::-webkit-scrollbar {
 								}
 							}
 						}
-						// .notification-icon {
-						// 	right: -10px;
-						// 	color: #ffffff;
-						// 	cursor: pointer;
-						// 	transition: all 0.25s ease-in-out;
-						// 	position: relative;
-
-						// 	&::after {
-						// 		content: '';
-						// 		position: absolute;
-						// 		top: -2px;
-						// 		right: -2px;
-						// 		width: 8px;
-						// 		height: 8px;
-						// 		background-color: #ef4444;
-						// 		border-radius: 50%;
-						// 		display: none;
-						// 	}
-
-						// 	&:hover {
-						// 		transform: scale(1.12);
-						// 		text-shadow: 0 2px 6px rgba(33, 124, 199, 0.3);
-						// 	}
-
-						// 	&.active::after {
-						// 		display: block;
-						// 	}
-						// }
 						.btn-lang {
 							border-radius: 4px;
 							img {

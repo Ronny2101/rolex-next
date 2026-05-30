@@ -442,7 +442,7 @@ export const REMOVENOTIFICATION = gql`
 `;
 
 export const REMOVEALLNOTIFICATION = gql`
-	mutation RemoveAllNotifications {
+	mutation RemoveAllNotifications{
 		removeAllNotifications
 	}
 `;

@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { formatterStr } from '../../utils';
 import { REACT_APP_API_URL, topPropertyRank } from '../../config';
 import { useReactiveVar } from '@apollo/client';
-import { basketItemsVar, userVar } from '../../../apollo/store';
+import { basketItemsVar, setBasketItems, userVar } from '../../../apollo/store';
 import IconButton from '@mui/material/IconButton';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import { useRouter } from 'next/router';
@@ -71,7 +71,7 @@ const PropertyCard = (props: PropertyCardType) => {
 			});
 		}
 
-		basketItemsVar(updatedItems);
+		setBasketItems(updatedItems);
 	};
 
 	const pushDetailHandler = async (propertyId: string) => {

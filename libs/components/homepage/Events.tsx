@@ -20,13 +20,13 @@ const eventsData: EventData[] = [
 		eventTitle: 'Premium Watches',
 		city: 'Tashkent',
 		description: 'Rolex — In Tashkent, a premium Swiss watch brand available through an official retailer, symbolizing prestige, precision, and timeless luxury in a growing luxury market!',
-		imageSrc: '/img/banner/1.jpeg',
+		imageSrc: '/img/banner/toshkent.png',
 	},
 	{
 		eventTitle: 'Four seasons moscow',
 		city: 'Moskva',
 		description: 'Bold elegance, exclusive lifestyle, and powerful luxury presence!',
-		imageSrc: '/img/banner/10.jpeg',
+		imageSrc: '/img/banner/moskva.PNG',
 	},
 	{
 		eventTitle: 'Myungbosa',

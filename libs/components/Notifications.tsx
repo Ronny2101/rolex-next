@@ -29,7 +29,9 @@ type Direction = 'ASC' | 'DESC';
 type TabKey = 'new' | 'read' | 'all';
 
 interface NotificationsProps {
-	initialInput: { page: number; limit: number; sort?: string; direction?: Direction };
+	initialInput: {
+		_id: any; page: number; limit: number; sort?: string; direction?: Direction 
+};
 	open: boolean;
 	onClose: () => void;
 }
@@ -99,8 +101,8 @@ const Notifications = ({ initialInput, open, onClose }: NotificationsProps) => {
 	};
 
 	const handleDeleteAll = async () => {
-		await removeAllNotifications().catch(console.error);
-		setNotifications([]);
+		await removeAllNotifications({ variables: {} }).catch(console.error);
+		 setNotifications([]);
 		await Promise.all([refetchCount?.(), refetchList?.(listVariables)]);
 	};
 

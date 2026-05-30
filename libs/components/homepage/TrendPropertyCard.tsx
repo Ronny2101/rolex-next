@@ -9,7 +9,7 @@ import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import { REACT_APP_API_URL } from '../../config';
 import router, { useRouter } from 'next/router';
 import { useReactiveVar } from '@apollo/client';
-import { basketItemsVar, userVar } from '../../../apollo/store';
+import { basketItemsVar, setBasketItems, userVar } from '../../../apollo/store';
 import { useTranslation } from 'react-i18next';
 import { sweetBasicAlert, sweetMixinErrorAlert } from '../../sweetAlert';
 import { i18n } from 'next-i18next';
@@ -61,7 +61,7 @@ const TrendPropertyCard = (props: TrendPropertyCardProps) => {
 				itemQuantity: 1,
 			});
 		}
-		basketItemsVar(next);
+		setBasketItems(next);
 	};
 
 	const handleLikeClick = (e: React.MouseEvent, propertyId: string) => {

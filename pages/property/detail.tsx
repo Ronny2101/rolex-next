@@ -5,7 +5,7 @@ import withLayoutFull from '../../libs/components/layout/LayoutFull';
 import { NextPage } from 'next';
 import Review from '../../libs/components/property/Review';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import PropertyBigCard from '../../libs/components/common/PropertyBigCard';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -33,7 +33,6 @@ import { Direction, Message } from '../../libs/enums/common.enum';
 import { sweetErrorHandling, sweetMixinErrorAlert, sweetTopSmallSuccessAlert } from '../../libs/sweetAlert';
 import { CREATE_COMMENT, LIKE_TARGET_PROPERTY } from '../../apollo/user/mutation';
 
-SwiperCore.use([Autoplay, Navigation, Pagination]);
 
 export const getStaticProps = async ({ locale }: any) => ({
 	props: {
@@ -420,9 +419,9 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 									</Stack>
 								</Stack>
 								<Stack className={'floor-plans-config'}>
-									<Typography className={'title'}>Floor Plans</Typography>
+									<Typography className={'title'}>Our Official Locations</Typography>
 									<Stack className={'image-box'}>
-										<img src={'/img/property/floorPlan.png'} alt={'image'} />
+										<img src={'/img/banner/location.png'} alt={'image'} />
 									</Stack>
 								</Stack>
 								<Stack className={'address-config'}>
