@@ -1,5 +1,3 @@
-version: "3.3"
-
 services:
     rolex-next:
         container_name: rolex-next
