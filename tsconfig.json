@@ -16,7 +16,10 @@
 		"jsx": "preserve",
 		"incremental": true,
 		"exactOptionalPropertyTypes": false,
-		"types": ["node", "jest"]
+		"types": ["node", "jest"],
+		"paths": {
+			"@scss/*": ["./scss/*"]
+		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
 	"exclude": ["node_modules"]
