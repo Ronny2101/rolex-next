@@ -132,7 +132,7 @@ const Notifications = ({ initialInput, open, onClose }: NotificationsProps) => {
 					borderRadius: 3,
 					boxShadow: '0 8px 25px rgba(0,0,0,0.15)',
 					border: '1px solid #e0e0e0',
-					backgroundColor: 'hsl(33, 64%, 81%)',
+					backgroundColor: 'white',
 					backdropFilter: 'blur(8px)',
 				},
 			}}
