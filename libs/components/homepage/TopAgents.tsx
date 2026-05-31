@@ -8,7 +8,7 @@ import useDeviceDetect from '../../hooks/useDeviceDetect';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination } from 'swiper';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import TopAgentCard from './TopAgentCard';
 import type { Member } from '../../types/member/member';
 import type { AgentsInquiry } from '../../types/member/member.input';
