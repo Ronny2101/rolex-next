@@ -120,7 +120,7 @@ const Faq: React.FC<Props> = ({ category = NoticeCategory.FAQ }) => {
         })}
       </Glass>
 
-      <Stack direction="row" justifyContent="center">
+      <Stack direction="row" justifyContent="center" backgroundColor="red">
         <Pagination page={page} count={pageCount} onChange={(_, p) => setPage(p)} />
       </Stack>
     </Stack>
