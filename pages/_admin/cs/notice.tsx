@@ -116,6 +116,7 @@ const AdminNotice: NextPage = (props: any) => {
 							page={1}
 							onPageChange={() => {}}
 							onRowsPerPageChange={() => {}}
+							backgroundColor="red"
 						/>
 					</TabContext>
 				</Box>

@@ -131,7 +131,7 @@ const Notice: React.FC<Props> = ({ category }) => {
         })}
       </Glass>
 
-      <Stack alignItems="center" backgroundColor="red" sx={{ mt: 1 }}>
+      <Stack alignItems="center" sx={{ mt: 1 }}>
         <Pagination page={page} count={pageCount} onChange={(_, p) => setPage(p)} />
       </Stack>
     </Stack>
